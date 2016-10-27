@@ -4,8 +4,8 @@ Starting up:
 
 Back end:
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Windows")
+![alt text](https://github.com/arjunrao87/bikeshare/blob/master/resources/backend.JPG "Windows")
 
 Front end:
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Windows")
+![alt text](https://github.com/arjunrao87/bikeshare/blob/master/resources/frontend.JPG "Windows")
