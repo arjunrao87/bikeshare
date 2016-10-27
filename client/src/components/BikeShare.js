@@ -23,10 +23,14 @@ class BikeShare extends Component {
 
 	render() {
 	  return (
-	    <div className="bikeShare">
+	    <div id="bootcards">
 	    	<Header time={this.state.time}/>
-	    	<Summary stations={this.state.stations}/>
-	    	<Details/>
+	    	<div className="container bootcards-container" id="main">
+		    	<div className="row">
+		    		<Summary stations={this.state.stations}/>
+		    		<Details/>
+		    	</div>
+	    	</div>
 	    </div>
 	  );
 	}
