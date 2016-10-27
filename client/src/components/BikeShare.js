@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ServerCallAPI from '../helpers/ServerCallAPI';
-
+import Summary from './Summary';
+import Details from './Details';
+import Header from './Header';
+import '../css/BikeShare.css';
+ 
 class BikeShare extends Component {
 
 	constructor( props ){
@@ -19,11 +23,10 @@ class BikeShare extends Component {
 
 	render() {
 	  return (
-	    <div>
-	    	<pre>{this.state.time}</pre>
-	    	<pre>{this.state.stations.map(
-	    			(val,index) => { return <li key={index} >{val.stationName} </li> } )}
-	    	</pre>
+	    <div className="bikeShare">
+	    	<Header time={this.state.time}/>
+	    	<Summary stations={this.state.stations}/>
+	    	<Details/>
 	    </div>
 	  );
 	}

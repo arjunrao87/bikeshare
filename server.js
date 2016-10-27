@@ -10,4 +10,5 @@ app.use('/data', function(req, res) {
 	console.log( "Requesting data from Bay Area Bike Share..." );
 	var url = "http://feeds.bayareabikeshare.com/stations/stations.json";
 	req.pipe(request(url)).pipe(res);
+	console.log( "Execution time received = " + res.executionTime );
 });
