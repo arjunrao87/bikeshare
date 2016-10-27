@@ -5,14 +5,14 @@ class BikeShare extends Component {
 
 	constructor( props ){
 		super(props);
+		this.state = {stations:[], time:""};
 		this.queryAPI();
-		this.state = {data:[]};
 	}
 
 	queryAPI(){
 		console.log( "QueryAPI called..." );
 		ServerCallAPI.retrieveBikeData((data) => {
-			this.setState({data:data});
+			this.setState({stations:data.stationBeanList, time:data.executionTime});
 			return data;
 		});
 	}
@@ -20,7 +20,10 @@ class BikeShare extends Component {
 	render() {
 	  return (
 	    <div>
-	    	<pre>{this.state.data.executionTime}</pre>
+	    	<pre>{this.state.time}</pre>
+	    	<pre>{this.state.stations.map(
+	    			(val,index) => { return <li key={index} >{val.stationName} </li> } )}
+	    	</pre>
 	    </div>
 	  );
 	}

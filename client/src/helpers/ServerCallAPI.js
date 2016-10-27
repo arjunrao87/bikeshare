@@ -1,5 +1,4 @@
 function retrieveBikeData(cb) {
-  console.log( "Attempting search ");
   return fetch(`data`, {
     accept: 'application/json',
   }).then(checkStatus)
