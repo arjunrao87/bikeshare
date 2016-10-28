@@ -26,13 +26,9 @@ class Details extends React.Component{
 							<h4 className="list-group-item-heading">{station.lastCommunicationTime} PST</h4>
 							</div>
 							<div className="list-group-item">
-								<label>Department</label>
-								<h4 className="list-group-item-heading">Finance</h4>
+								<label>Map</label>
+							<h4 className="list-group-item-heading">{station.latitude}, {station.longitude}</h4>
 							</div>
-							<a className="list-group-item" href="tel://+1 650-555-0055">
-								<label>Phone</label>
-								<h4 className="list-group-item-heading">+1 650-555-0055</h4>
-							</a>
 						</div>
 					</div>
 				</div>
