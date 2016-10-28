@@ -3,9 +3,9 @@ import React from 'react';
 class Summary extends React.Component{
 
 	render(){
-		return(	
+		return(
 			<div className="col-sm-5 bootcards-list" id="list" data-title="Contacts">
-				<div className="panel panel-default">				
+				<div className="panel panel-default">
 					<div className="panel-body">
 						<div className="search-form">
 							<div className="row">
@@ -15,14 +15,16 @@ class Summary extends React.Component{
 								      <i className="fa fa-search"></i>
 							      </div>
 							    </div>
-							</div>						    
-						</div>					
+							</div>
+						</div>
 					</div>
 					<div className="list-group">
-							<a className="list-group-item pjax"  href="">
-								<h4 className="list-group-item-heading">Acey, Sofia</h4>
-								<p className="list-group-item-text">Masung Corp.</p>
-							</a>					
+					{this.props.stations.map( (station,index) => (
+							<a key={index} className="list-group-item pjax"  href="">
+								<h4 className="list-group-item-heading">{station.stationName}</h4>
+								<p  className="list-group-item-text">{station.availableBikes} bikes available</p>
+							</a>
+						))}
 					</div>
 				</div>
 			</div>
