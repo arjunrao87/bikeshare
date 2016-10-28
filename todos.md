@@ -9,4 +9,4 @@
 9. Show visualization of history of bike availability across stations
 10. Show active/inactive station ( in details tab ) using green/red color
 11. Set up Travis CI
-12. Test cases ( Karma/Jasmine )
+12. Test cases ( Karma/Jasmine ) and CodeCov setup

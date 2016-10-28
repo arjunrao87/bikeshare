@@ -14,7 +14,8 @@
     "react-bootcards": "~0.1.0",
     "react-bootstrap": "~0.30.5",
     "react-dom": "^15.3.2",
-    "react-scripts": "0.6.1"
+    "react-scripts": "0.6.1",
+    "react-select": "~1.0.0-rc.2"
   },
   "scripts": {
     "start": "react-scripts start",
