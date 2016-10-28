@@ -7,4 +7,6 @@
 7. Figure out deployment steps
 8. Show map widget in the details panel
 9. Show visualization of history of bike availability across stations
-10. Show active/inactive station ( in details tab ) using green/red color 
+10. Show active/inactive station ( in details tab ) using green/red color
+11. Set up Travis CI
+12. Test cases ( Karma/Jasmine )
