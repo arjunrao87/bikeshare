@@ -4,7 +4,7 @@ import Summary from './Summary';
 import Details from './Details';
 import Header from './Header';
 import '../css/BikeShare.css';
- 
+
 class BikeShare extends Component {
 
 	constructor( props ){
@@ -27,7 +27,7 @@ class BikeShare extends Component {
 	    	<Header time={this.state.time}/>
 	    	<div className="container bootcards-container" id="main">
 		    	<div className="row">
-		    		<Summary stations={this.state.stations}/>
+		    		<Summary stations={this.state.stations} selectedStation={station => this.selectStation(station) }/>
 		    		<Details/>
 		    	</div>
 	    	</div>
