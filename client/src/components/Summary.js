@@ -33,6 +33,10 @@ class Summary extends React.Component{
     this.props.onValueClick(option, event);
   }
 
+  displayDetails( station, event ){
+    console.log( "The station clicked was " + station.stationName )
+  }
+
 	render(){
     var stationsToRender = ( this.state.tabStations.length > 0 ) ? this.state.tabStations : this.props.stations;
 		return(
@@ -44,13 +48,11 @@ class Summary extends React.Component{
 							    <div className="col-xs-9">
 							      <div className="form-group">
 												<Select
-                          autofocus
 													name="form-field-name"
 													value={this.state.selectValue.label}
 													options={this.getStationNames(this.props.stations)}
 													onChange={this.updateValue}
                           onValueClick={this.handleValueClick}
-                          tabSelectsValue
 												/>
 							      </div>
 							    </div>
@@ -58,12 +60,12 @@ class Summary extends React.Component{
 						</div>
 					</div>
 					<div className="list-group">
-					{stationsToRender.map( (station,index) => (
-							<a key={index} className="list-group-item pjax"  href="">
-								<h4 className="list-group-item-heading">{station.stationName}</h4>
-								<p  className="list-group-item-text">{station.availableBikes} bikes available</p>
-							</a>
-						))}
+  					{stationsToRender.map( (station,index) => (
+  							<a key={index} onClick={this.displayDetails(station)} className="list-group-item pjax"  href="">
+  								<h4 className="list-group-item-heading">{station.stationName}</h4>
+  								<p className="list-group-item-text">{station.availableBikes} bikes available</p>
+  							</a>
+  						))}
 					</div>
 				</div>
 			</div>
