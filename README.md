@@ -1,4 +1,4 @@
-Bike share program  [![Build Status](https://travis-ci.org/arjunrao87/bikeshare.svg?branch=master)](https://travis-ci.org/arjunrao87/bikeshare)
+# [Bay Area Bike Share Tracker] [![Build Status](https://travis-ci.org/arjunrao87/bikeshare.svg?branch=master)](https://travis-ci.org/arjunrao87/bikeshare)
 
 
 Starting up:
