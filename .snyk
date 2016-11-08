@@ -1,0 +1,9 @@
+version: v1.5.0
+ignore: {}
+patch:
+  'npm:minimatch:20160620':
+    - react-scripts > jest > jest-cli > istanbul-api > fileset > minimatch:
+        patched: '2016-11-08T02:41:29.293Z'
+  'npm:shell-quote:20160621':
+    - foreman > shell-quote:
+        patched: '2016-11-08T02:41:29.293Z'
