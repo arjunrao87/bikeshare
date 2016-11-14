@@ -9,12 +9,11 @@ class BikeShare extends Component {
 
 	constructor( props ){
 		super(props);
-		this.state = {stations:[], time:""};
+		this.state = {stations:[], time:"", selectedStation:{}}
 		this.queryAPI();
 	}
 
 	queryAPI(){
-		console.log( "QueryAPI called..." );
 		ServerCallAPI.retrieveBikeData((data) => {
 			this.setState({stations:data.stationBeanList, time:data.executionTime});
 			return data;
@@ -27,12 +26,16 @@ class BikeShare extends Component {
 	    	<Header time={this.state.time}/>
 	    	<div className="container bootcards-container" id="main">
 		    	<div className="row">
-		    		<Summary stations={this.state.stations} selectedStation={station => this.selectStation(station) }/>
-		    		<Details/>
+		    		<Summary stations={this.state.stations} myFunc={this.handleChildFunc.bind(this)}/>
+		    		<Details selectedStation={this.state.selectedStation}/>
 		    	</div>
 	    	</div>
 	    </div>
 	  );
+	}
+
+	handleChildFunc(val){
+		this.setState({selectedStation:val});
 	}
 }
 

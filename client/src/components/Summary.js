@@ -5,15 +5,15 @@ class Summary extends React.Component{
 
   constructor( props ){
     super(props);
-    this.state={selectValue:{label:"",value:""}, tabStations:[]};
+    this.state={selectValue:{label:"",value:""}, tabStations:[], selectedIndex : null};
     this.updateValue = this.updateValue.bind( this );
+    this.getCellState = this.getCellState.bind( this );
   }
 
   updateValue (newValue) {
 		console.log('State changed to ' + newValue.label);
     var newStations = [];
-    this.props.stations.map(
-      function(station,index){
+    this.props.stations.map( ( station,index )=> {
         if( station.stationName === newValue.label ){
           newStations.push( station );
         }
@@ -32,9 +32,14 @@ class Summary extends React.Component{
     if (!this.props.onValueClick) return;
     this.props.onValueClick(option, event);
   }
+  
+  onItemClick(item, index, e) {  
+    this.props.myFunc(item);
+    this.setState({selectedIndex: index});
+  }
 
-  displayDetails( station, event ){
-    console.log( "The station clicked was " + station.stationName )
+  getCellState( index ){
+    return this.state.selectedIndex !== index ? "list-group-item pjax" : "list-group-item pjax active";
   }
 
 	render(){
@@ -61,10 +66,10 @@ class Summary extends React.Component{
 					</div>
 					<div className="list-group">
   					{stationsToRender.map( (station,index) => (
-  							<a key={index} onClick={this.displayDetails(station)} className="list-group-item pjax"  href="">
+  							<div key={index} onClick={this.onItemClick.bind(this, station, index)} className={this.getCellState(index)}>
   								<h4 className="list-group-item-heading">{station.stationName}</h4>
   								<p className="list-group-item-text">{station.availableBikes} bikes available</p>
-  							</a>
+  							</div>
   						))}
 					</div>
 				</div>
