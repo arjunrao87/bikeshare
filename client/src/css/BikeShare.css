@@ -1,3 +1,9 @@
 .bikeShare{
 
 }
+#inactiveStatus{
+	background:#FF6961;
+}
+#activeStatus{
+	background:#77DD77;
+}

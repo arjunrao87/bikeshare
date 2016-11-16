@@ -4,15 +4,14 @@ class Details extends React.Component{
 
 	render(){
 		var station = this.props.selectedStation;
-		var isAvailable = (station.status === "IN_SERVICE" ? "Active station" : "Inactive station" );
+		var stationStatus = (station.status === "IN_SERVICE" ) ? "activeStatus" : "inactiveStatus";
 		if( station.stationName != null ){
-			console.log( "selected station = " + JSON.stringify( station ) );
 			return(
 				<div className="col-sm-7 bootcards-cards hidden-xs" id="listDetails">
 					<div id="contactCard">
 						<div className="panel panel-default">
-							<div className="panel-heading clearfix">
-								<h3 className="panel-title pull-left">{station.stationName} ( {isAvailable} )</h3>
+							<div className="panel-heading clearfix" id={stationStatus}>
+								<h3 className="panel-title pull-left">{station.stationName}</h3>
 							</div>
 							<div className="list-group">
 								<div className="list-group-item">

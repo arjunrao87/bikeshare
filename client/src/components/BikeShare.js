@@ -9,18 +9,24 @@ class BikeShare extends Component {
 
 	constructor( props ){
 		super(props);
-		this.state = {stations:[], time:"", selectedStation:{}}
-		this.queryAPI();
+		this.state = {stations:[], time:"", selectedStation:{}, startAPIQuery:null}
+		this.startQueryAPI = this.startQueryAPI.bind( this );
 	}
 
-	queryAPI(){
-		ServerCallAPI.retrieveBikeData((data) => {
-			this.setState({stations:data.stationBeanList, time:data.executionTime});
-			return data;
-		});
+	startQueryAPI(){
+		if( this.state.startAPIQuery == null ){
+			setInterval( () => {
+  				ServerCallAPI.retrieveBikeData((data) => {
+					this.setState({stations:data.stationBeanList, time:data.executionTime});
+					return data;
+				});
+			}, 5000);
+			this.setState( {startAPIQuery:true});
+		}
 	}
 
 	render() {
+	  this.startQueryAPI();
 	  return (
 	    <div id="bootcards">
 	    	<Header time={this.state.time}/>

@@ -64,14 +64,16 @@ class Summary extends React.Component{
 							</div>
 						</div>
 					</div>
-					<div className="list-group">
-  					{stationsToRender.map( (station,index) => (
-  							<div key={index} onClick={this.onItemClick.bind(this, station, index)} className={this.getCellState(index)}>
-  								<h4 className="list-group-item-heading">{station.stationName}</h4>
-  								<p className="list-group-item-text">{station.availableBikes} bikes available</p>
-  							</div>
-  						))}
-					</div>
+          <div>
+  					<div className="list-group">
+    					{stationsToRender.map( (station,index) => (
+    							<div key={index} onClick={this.onItemClick.bind(this, station, index)} className={this.getCellState(index)}>
+    								<h4 className="list-group-item-heading">{station.stationName}</h4>
+    								<p className="list-group-item-text">{station.availableBikes} bikes available</p>
+    							</div>
+    						))}
+  					</div>
+          </div>
 				</div>
 			</div>
 		);
