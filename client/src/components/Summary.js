@@ -11,7 +11,6 @@ class Summary extends React.Component{
   }
 
   updateValue (newValue) {
-		console.log('State changed to ' + newValue.label);
     var newStations = [];
     this.props.stations.map( ( station,index )=> {
         if( station.stationName === newValue.label ){
@@ -32,8 +31,8 @@ class Summary extends React.Component{
     if (!this.props.onValueClick) return;
     this.props.onValueClick(option, event);
   }
-  
-  onItemClick(item, index, e) {  
+
+  onItemClick(item, index, e) {
     this.props.myFunc(item);
     this.setState({selectedIndex: index});
   }
