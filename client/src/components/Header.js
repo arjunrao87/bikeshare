@@ -3,13 +3,23 @@ import React from 'react';
 class Header extends React.Component{
 
 	render(){
+		var executionTime = this.props.time;
 		return(
 			<div>
-				<div className="navbar navbar-default navbar-fixed-top" role="navigation">
-					<div className="container">
-						<a className="navbar-brand no-break-out" href="/">Bay Area Bike Share</a>
+			<nav className="navbar navbar-default navbar-fixed-top">
+				<div className="container-fluid">
+					<div className="navbar-header">
+						 <a href="/about" className="navbar-brand">Bay Area Bike Share</a>
 					</div>
-				</div>
+				  <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+					 <ul className="nav navbar-nav navbar-right">
+					 	<li><a href="/facebook"><i className="fa fa-facebook"></i></a></li>
+					 	<li><a href="/twitter"><i className="fa fa-twitter"></i></a></li>
+					  <li><a href="https://github.com/arjunrao87/bikeshare"><button title="Refreshed every 5 minutes">Last refreshed at {executionTime} PST</button></a></li>
+					 </ul>
+				  </div>
+				 </div>
+			 </nav>
 			</div>
 		);
 	}

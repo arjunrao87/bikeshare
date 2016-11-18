@@ -7,3 +7,14 @@
 #activeStatus{
 	background:#77DD77;
 }
+li {
+	display: block;
+}
+button{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:default;
+	overflow: hidden;
+	outline:none;
+}
