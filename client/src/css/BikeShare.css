@@ -19,5 +19,9 @@ button{
 	outline:none;
 }
 .arrangement{
-	z-index: 2000;
+	z-index: 1500;
+}
+
+.upFront{
+	z-index: 5000;
 }
