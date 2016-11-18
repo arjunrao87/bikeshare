@@ -12,18 +12,21 @@ class Summary extends React.Component{
 
   updateValue (newValue) {
     var newStations = [];
-    this.props.stations.map( ( station,index )=> {
-        if( station.stationName === newValue.label ){
-          newStations.push( station );
+    if( newValue != null ){
+      this.setState({selectedIndex:null});
+      this.props.stations.map( ( station,index )=> {
+          if( station.stationName === newValue.label ){
+            newStations.push( station );
+          }
         }
-      }
-    );
-		this.setState({selectValue:{label:newValue.label,value:newValue.value}, tabStations:newStations});
+      );
+  		this.setState({selectValue:{label:newValue.label,value:newValue.value}, tabStations:newStations});
+    }
 	}
 
   getStationNames( stations ){
     var localStations = [];
-    stations.map( (station,index) => (localStations.push({value:station.stationName,label:station.stationName})));
+    stations.map( (station,index) => (localStations.push({value:station.stationName,label:station.stationName, clearableValue: true})));
     return localStations;
   }
 
@@ -50,13 +53,14 @@ class Summary extends React.Component{
 						<div className="search-form">
 							<div className="row">
 							    <div className="col-xs-9">
-							      <div className="form-group">
+							      <div className="form-group arrangement">
 												<Select
 													name="form-field-name"
-													value={this.state.selectValue.label}
+												  value={this.state.selectValue.label}
 													options={this.getStationNames(this.props.stations)}
 													onChange={this.updateValue}
                           onValueClick={this.handleValueClick}
+                          resetValue=""
 												/>
 							      </div>
 							    </div>
