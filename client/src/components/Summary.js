@@ -12,6 +12,7 @@ class Summary extends React.Component{
 
   updateValue (newValue) {
     var newStations = [];
+    this.props.detailsStation(null);
     if( newValue != null ){
       this.setState({selectedIndex:null});
       this.props.stations.map( ( station,index )=> {
@@ -36,7 +37,7 @@ class Summary extends React.Component{
   }
 
   onItemClick(item, index, e) {
-    this.props.myFunc(item);
+    this.props.detailsStation(item);
     this.setState({selectedIndex: index});
   }
 

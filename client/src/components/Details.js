@@ -4,8 +4,8 @@ class Details extends React.Component{
 
 	render(){
 		var station = this.props.selectedStation;
-		var stationStatus = (station.status === "IN_SERVICE" ) ? "activeStatus" : "inactiveStatus";
-		if( station.stationName != null ){
+		if( station != null && station.stationName != null ){
+			var stationStatus = (station.status === "IN_SERVICE" ) ? "activeStatus" : "inactiveStatus";
 			return(
 				<div className="col-sm-7 bootcards-cards hidden-xs" id="listDetails">
 					<div id="contactCard">

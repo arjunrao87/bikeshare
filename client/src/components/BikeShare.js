@@ -38,7 +38,7 @@ class BikeShare extends Component {
 	    	<Header time={this.state.time}/>
 	    	<div className="container bootcards-container" id="main">
 		    	<div className="row">
-		    		<Summary stations={this.state.stations} myFunc={this.handleChildFunc.bind(this)}/>
+		    		<Summary stations={this.state.stations} detailsStation={this.handleChildFunc.bind(this)}/>
 		    		<Details selectedStation={this.state.selectedStation}/>
 		    	</div>
 	    	</div>
