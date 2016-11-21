@@ -1,4 +1,5 @@
 import React from 'react';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 class Details extends React.Component{
 
@@ -7,8 +8,10 @@ class Details extends React.Component{
 		if( station != null && station.stationName != null ){
 			var stationStatus = (station.status === "IN_SERVICE" ) ? "activeStatus" : "inactiveStatus";
 			return(
+				<StickyContainer>
 				<div className="col-sm-7 bootcards-cards hidden-xs" id="listDetails">
-					<div id="contactCard">
+					<Sticky>
+					<div id="contactCard" className = "follow-">
 						<div className="panel panel-default">
 							<div className="panel-heading clearfix" id={stationStatus}>
 								<h3 className="panel-title pull-left">{station.stationName}</h3>
@@ -33,7 +36,9 @@ class Details extends React.Component{
 							</div>
 						</div>
 					</div>
+				</Sticky>
 				</div>
+			</StickyContainer>
 			);
 		} else{
 			return (<div/>);

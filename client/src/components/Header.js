@@ -11,15 +11,48 @@ class Header extends React.Component{
 	}
 
 	handleClick() {
-		console.log( "this.cllick ");
 		this.setState({isShowingModal: true})
 	};
 
 	handleClose() {this.setState({isShowingModal: false})};
 
+	twitterModal(){
+		var quote = encodeURIComponent("Use Bay Area Bikeshare! http://bit.ly/1VbaN8Z");
+		var h=550;
+		var w=700;
+		var wLeft = window.screenLeft ? window.screenLeft : window.screenX;
+  	var wTop = window.screenTop ? window.screenTop : window.screenY;
+		var left = wLeft + (window.innerWidth / 2) - (w / 2);
+		var top = wTop + (window.innerHeight / 2) - (h / 2);
+		var url = "https://twitter.com/home?status="+quote;
+		var newwindow = window.open(url, "Tweet!", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+		if (window.focus) {newwindow.focus()}
+			return false;
+	}
+
+	facebookModal(){
+		var quote = encodeURIComponent("http://bit.ly/1VbaN8Z");
+		var h=550;
+		var w=700;
+		var wLeft = window.screenLeft ? window.screenLeft : window.screenX;
+		var wTop = window.screenTop ? window.screenTop : window.screenY;
+		var left = wLeft + (window.innerWidth / 2) - (w / 2);
+		var top = wTop + (window.innerHeight / 2) - (h / 2);
+		var title = "Use Bay Area Bikeshare!";
+		var url = "https://www.facebook.com/sharer/sharer.php?u="+quote+"&t="+title;
+		var newwindow = window.open(url, "Tweet!", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+		if (window.focus) {newwindow.focus()}
+			return false;
+	}
+
+	openShare (url){
+	var newwindow=window.open(url,'name','height=550,width=700');
+	if (window.focus) {newwindow.focus()}
+		return false;
+	}
+
 	render(){
 		var executionTime = this.props.time;
-
 		return(
 			<div>
 			<nav className="navbar navbar-default navbar-fixed-top">
@@ -43,8 +76,8 @@ class Header extends React.Component{
 					</div>
 				  <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
 					 <ul className="nav navbar-nav navbar-right">
-					 	<li><a href="/facebook"><i className="fa fa-facebook"></i></a></li>
-					 	<li><a href="/twitter"><i className="fa fa-twitter"></i></a></li>
+					 	<li><a><button onClick={this.facebookModal}><i className="fa fa-facebook"></i></button></a></li>
+					 	<li><a><button onClick={this.twitterModal}><i className="fa fa-twitter"></i></button></a></li>
 					  <li><a href="https://github.com/arjunrao87/bikeshare"><button title="Refreshed every 5 minutes">Last refreshed at {executionTime} PST</button></a></li>
 					 </ul>
 				  </div>

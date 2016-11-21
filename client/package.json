@@ -11,13 +11,16 @@
   "dependencies": {
     "bootstrap-css": "~3.0.0",
     "react": "^15.3.2",
+    "react-addons-create-fragment": "^15.4.0",
     "react-bootcards": "~0.1.0",
     "react-bootstrap": "~0.30.5",
     "react-dom": "^15.3.2",
     "react-modal": "^1.5.2",
     "react-modal-dialog": "^4.0.2",
+    "react-paginate": "^2.2.3",
     "react-scripts": "0.6.1",
-    "react-select": "~1.0.0-rc.2"
+    "react-select": "~1.0.0-rc.2",
+    "react-sticky": "^5.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
