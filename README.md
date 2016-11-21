@@ -6,10 +6,15 @@
 ### Set up project
 
 `git clone https://github.com/arjunrao87/bikeshare.git`
+
 `cd bikeshare`
+
 `npm install`
+
 `cd client`
+
 `npm install`
+
 `cd ..`
 
 ### Start Back end
@@ -23,23 +28,23 @@
 
 ## Product Screenshots
 
-### List of bike stations :
+### List of bike stations
 
 ![img1]
 
-### Bike station details :
+### Bike station details
 
 ![img2]
 
-### Searching for bike station:
+### Searching for bike station
 
 ![img3]
 
-### Sharing is caring - Tweet this! :
+### Sharing is caring - Tweet this!
 
 ![img4]
 
-### Details about the app :
+### Details about the app
 
 ![img6]
 
