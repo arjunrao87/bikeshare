@@ -55,8 +55,8 @@ class Header extends React.Component{
 		var executionTime = this.props.time;
 		return(
 			<div>
-			<nav className="navbar navbar-default navbar-fixed-top">
-				<div className="container-fluid">
+			<nav className="navbar navbar-fixed-top">
+				<div className="container-fluid headerColor">
 					<div className="navbar-header upfront" onClick={this.handleClick}>
 						 <a className="navbar-brand">
 						 	Bay Area Bike Share

@@ -8,10 +8,9 @@ class Details extends React.Component{
 		if( station != null && station.stationName != null ){
 			var stationStatus = (station.status === "IN_SERVICE" ) ? "activeStatus" : "inactiveStatus";
 			return(
-				<StickyContainer>
-				<div className="col-sm-7 bootcards-cards hidden-xs" id="listDetails">
-					<Sticky>
-					<div id="contactCard" className = "follow-">
+				<div className = "detailsCard">
+				<div className="col-sm-7 bootcards-cards hidden-xs " id="listDetails">
+					<div id="contactCard">
 						<div className="panel panel-default">
 							<div className="panel-heading clearfix" id={stationStatus}>
 								<h3 className="panel-title pull-left">{station.stationName}</h3>
@@ -36,9 +35,8 @@ class Details extends React.Component{
 							</div>
 						</div>
 					</div>
-				</Sticky>
 				</div>
-			</StickyContainer>
+			</div>
 			);
 		} else{
 			return (<div/>);

@@ -15,10 +15,11 @@ class Summary extends React.Component{
     this.props.detailsStation(null);
     if( newValue != null ){
       this.setState({selectedIndex:null});
-      this.props.stations.map( ( station,index )=> {
+      this.props.stations.map( ( station,index ) => {
           if( station.stationName === newValue.label ){
             newStations.push( station );
           }
+          return newStations;
         }
       );
   		this.setState({selectValue:{label:newValue.label,value:newValue.value}, tabStations:newStations});

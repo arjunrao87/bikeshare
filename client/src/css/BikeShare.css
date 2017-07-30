@@ -1,5 +1,17 @@
 .bikeShare{
-
+	background-color: #FFDEE9;
+	background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+.headerColor{
+	background-color: #FFDEE9;
+}
+.detailsCard{
+	position: -webkit-sticky;
+  position: sticky;
+	top: 50px;
+}
+#header{
+	padding-bottom:80px
 }
 #inactiveStatus{
 	background:#FF6961;
@@ -20,6 +32,11 @@ button{
 }
 .arrangement{
 	z-index: 1500;
+}
+
+.backgroundColor{
+	background-color: #FBAB7E;
+	background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
 .upFront{

@@ -34,8 +34,10 @@ class BikeShare extends Component {
 	render() {
 	  this.startQueryAPI();
 	  return (
-	    <div id="bootcards">
-	    	<Header time={this.state.time}/>
+	    <div id="bootcards" className="backgroundColor">
+				<div id="header">
+				  <Header time={this.state.time}/>
+				</div>
 	    	<div className="container bootcards-container" id="main">
 		    	<div className="row">
 		    		<Summary stations={this.state.stations} detailsStation={this.handleChildFunc.bind(this)}/>
