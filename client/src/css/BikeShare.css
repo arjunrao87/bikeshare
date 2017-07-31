@@ -6,9 +6,9 @@
 	background-color: #FFDEE9;
 }
 .detailsCard{
-	position: -webkit-sticky;
+	/*position: -webkit-sticky;
   position: sticky;
-	top: 50px;
+	top: 50px;*/
 }
 #header{
 	padding-bottom:80px
