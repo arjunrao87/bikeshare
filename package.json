@@ -19,7 +19,7 @@
     "react-scripts": "1.1.1",
     "sql.js": "^0.3.2",
     "superagent": "^3.8.1",
-    "snyk": "^1.83.0"
+    "snyk": "^1.232.0"
   },
   "scripts": {
     "start": "nf start -p 3000",
